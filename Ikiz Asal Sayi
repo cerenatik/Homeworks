@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int asal=0, onceki=0;
+	int max, max2, kalan;
+
+	for(int i=10; i<100; i++)
+	{
+		kalan=0;
+		for(int j=2; j<i; j++)
+		{
+			if(i%j==0)
+			{
+				kalan=1;
+				break;
+			}
+
+		}
+		if(kalan==0)
+		{
+			onceki=asal;
+			asal=i;
+		}
+		if(asal-onceki==2)
+		{
+			max2=onceki;
+			max=asal;
+		}
+		
+	}
+	printf("%d %d", max, max2);
+
+}
