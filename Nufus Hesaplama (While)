@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a=1000000;
+	int b=4000000;
+	int yil=0;
+	while(1)
+	{
+		if(a>b)
+		{
+			break;
+		}
+		else
+		{
+			a+=a*0.25;
+			b+=b*0.12;
+			yil++;
+		}
+	}
+	printf("%d yil sonra gecer.", yil);
+	getch();
+}
