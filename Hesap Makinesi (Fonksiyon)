@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include <stdlib.h>
+int toplamaislemi(int, int); //Prototype satırıdır.
+int cikarmaislemi(int, int);
+float bolmeislemi(int, int);
+int carpmaislemi(int, int);
+void menu();
+void hesapmakinesi();
+int main()
+{
+	int toplam;
+	//toplam= toplamaislemi(sayi1, sayi2);
+	//printf("Toplam = %d\n", toplamaislemi(sayi1, sayi2));
+	
+	
+	hesapmakinesi();
+	return 0;
+}
+int toplamaislemi(int sayi1, int sayi2)
+{
+	return sayi1 + sayi2;
+}
+int cikarmaislemi(int sayi1, int sayi2)
+{
+	return sayi1 - sayi2;
+}
+float bolmeislemi(int sayi1, int sayi2)
+{
+	if (sayi2==0)
+	{
+		printf("ikinci sayiniz 0...\n");
+		return 0;
+	}
+	else
+		return (float)sayi1/(float)sayi2; //İnt ile tanımlanan sayi1,2 float olarak da işlem görecek. Bölme float tanımlı.
+}
+int carpmaislemi(int sayi1, int sayi2)
+{
+	return sayi1 * sayi2;
+}
+void hesapmakinesi()
+{
+	int sayi1;
+	int sayi2;
+	int secim;
+	printf("Birinci Sayiyi Giriniz: ");
+	scanf("%d", &sayi1);
+	printf("İkinci Sayiyi Giriniz: ");
+	scanf("%d", &sayi2);
+	
+	menu();
+	printf("islem seciniz: ");
+	scanf("%d", &secim);
+	switch(secim)
+	{
+	case 1:
+		printf("Toplama Sonucu= %d\n",toplamaislemi(sayi1, sayi2));
+		break;
+	case 2:
+		printf("Cikarma Sonucu= %d\n",cikarmaislemi(sayi1, sayi2));
+		break;
+	case 3:
+		printf("Bolme Sonucu= %f\n",bolmeislemi(sayi1, sayi2));
+		break;
+	case 4:
+		printf("Carpma Sonucu= %d\n",carpmaislemi(sayi1, sayi2));
+		break;
+	
+	case 5: 
+		printf("Exit..");
+		break;
+	default:
+		printf("1,2,3,4,5 disinda bir sayi girdiniz!\n");
+		system("pause");
+		break;
+	}
+	return ;
+}
+void menu()
+{
+	printf(" 1-Toplama\n2-Cikarma\n3-Bolme\n4-Carpma\n5-Exit\n");
+}
