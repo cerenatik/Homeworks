@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int sayi;
+int x,y,z,t;
+int main()
+{
+	printf("En Fazla 4 Haneli Bir Sayi Giriniz: ");
+	scanf("%d", &sayi);
+	if(sayi>9999) 
+		printf("Lutfen Daha Kucuk Bir Sayi Giriniz\n"); //Girilen sayı 4 basamaktan fazla ise yeniden sayı girilmesini istenir.
+	scanf("%d", &sayi);
+	if(sayi >0 && sayi<=9999) //Eğer sayı 4 basamaklı veya daha küçük ise çözümleme işlemi uygulanır.
+	{
+		x=sayi/1000;
+		y=(sayi-(x*1000))/100;
+		z=(sayi-(x*1000)-(y*100))/10;
+		t=sayi-(x*1000)-(y*100)-(z*10);
+		printf("\nverilen %d sayisinda:",sayi);
+		printf("\n%d adet binlik",x);
+		printf("\n%d adet yuzluk",y);
+		printf("\n%d adet onluk",z);
+		printf("\n%d adet birlik vardir\n",t);
+	}
+getch();
+return 0;
+}
