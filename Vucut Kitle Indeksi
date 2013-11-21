@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+float vki;
+float kilo,boy;
+char cinsiyet;
+printf("Lutfen Cinsiyetinizi Giriniz (e veya k): ");
+cinsiyet=getchar();
+switch(cinsiyet)
+{
+  case'e':
+	  printf("Lutfen Boyunuzu Giriniz: ");
+	  scanf("%f", &boy);
+	  printf("Lutfen Kilonuzu Giriniz: ");
+	  scanf("%f", &kilo);
+	  vki=kilo/pow(boy,2);
+	  printf("Vucut Kitle Endeksi= %f\n", vki);
+	  if(vki<20.7)
+		  printf("Zayifsiniz. Saglik Riski!");
+	  if(vki>= 20.7 && vki <= 26.4)
+		  printf("Normalsiniz. Risk Yok.");
+	  if(vki>=26.5	&& vki<=31.1)
+		  printf("Simanlık	Sinirinda ya da Sismansiniz. Riskli.");
+	  if(vki>= 31.2)
+		  printf("Obezite. Ciddi derecede riskli.");
+	  break;
+  case'k':
+	  printf("Lutfen Boyunuzu Giriniz: ");
+	  scanf("%f", &boy);
+	  printf("Lutfen Kilonuzu Giriniz: ");
+	  scanf("%f", &kilo);
+	  vki=kilo/pow(boy,2);
+	  printf("Vucut Kitle Endeksi= %f\n", vki);
+	  if(vki<19.1)
+		  printf("Zayifsiniz. Saglik Riski!");
+	  if(vki>= 19.1 && vki <= 25.
+		  printf("Normalsiniz. Risk Yok.");
+	  if(vki>=25.9	&& vki<=32.2)
+		  printf("Simanlık	Sinirinda ya da Sismansiniz. Riskli.");
+	  if(vki>= 32.3)
+		  printf("Obezite. Ciddi derecede riskli.");
+	  break;
+}
+}
