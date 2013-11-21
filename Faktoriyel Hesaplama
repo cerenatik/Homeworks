@@ -1,0 +1,26 @@
+#include<stdio.h>
+int faktoriyel (int);
+int main()
+{
+	int sayi;
+	
+	printf("Bir Sayi Giriniz: ");
+	scanf("%d", &sayi);
+	printf("Sonuc: %d\n", faktoriyel(sayi));
+	
+	return 0;
+}
+int faktoriyel (int sayi)
+{
+	int sonuc = 1;
+	for(int i=sayi; i>=0; i--)
+	{
+		if(i==0)
+			sonuc= sonuc*1;
+		if(i==1)
+			sonuc= sonuc*i;
+		if (i>=2)
+			sonuc= sonuc*i;
+	}
+	return sonuc;
+}
