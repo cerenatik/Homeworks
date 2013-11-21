@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	
+	int kucuk_kenar, buyuk_kenar;
+	printf("Lutfen Kisa Kenar Uzunlugunu Giriniz:");
+	scanf("%d", &kucuk_kenar);
+	printf("Lutfen Uzun Kenar Uzunlugunu Giriniz:");
+	scanf("%d", &buyuk_kenar);
+	for(int i=0; i<=kucuk_kenar; i++)
+	{
+		for(int j=0; j<=buyuk_kenar; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	getchar();
+}
