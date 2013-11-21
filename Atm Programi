@@ -1,0 +1,160 @@
+#include<stdio.h> 
+#include<stdlib.h>
+#include<string.h>
+#include<math.h>
+
+int main()
+{
+int hesap_no1=123,sifre1=111, sayac=0;
+int gecici_no,gecici_sifre=1,secim,deneme_sifre1,deneme_sifre2,param ;
+int top_param=280000,gecici_sifre1, hesap_no2, gond_para;
+int para_cek;
+int para_yatir;
+char harf,harf2;
+
+
+baslangic_noktasi:
+printf("\tATiK BANKASINA HOSGELDINIZ\n");
+printf("\t\n");
+printf("\tbanka hesap numaranizi giriniz: ");
+scanf("%d",&gecici_no);
+
+
+
+
+while(gecici_no!=hesap_no1) //Hesap numarası doğruluğu kontrol ediliyor.
+{
+if(gecici_no==-1)
+break;
+printf("\tYanlis hesap numarasi!\n");
+printf("\tlutfen tekrar deneyiniz: \n");
+scanf("%d",&gecici_no);
+
+}
+
+if(gecici_no==hesap_no1)
+{
+while(gecici_sifre!=sifre1)
+{
+
+
+
+printf("\n\tsifrenizi giriniz: ");
+scanf("%d",&gecici_sifre);
+sayac++;
+
+}
+}
+
+while(secim!=7) //Seçim Çıkış olana kadar devam et komutu verildi.
+{
+printf("\n\tBANKA ISLEMLERI MENUSU\n");
+printf("\t1. Sifre Degistirme\n");
+printf("\t2. Bakiye Sorgulama\n");
+printf("\t3. Para Yatirma\n");
+printf("\t4. Para Cekme\n");
+printf("\t5. Hesap Yazdir\n");
+printf("\t6. Havale\n");
+printf("\t7. Cikis\n");
+printf("\t>>Seciminiz");
+scanf("%d",&secim);
+if(secim==1) //Eğer seçim Şifre Değiştirme ise yeni şifre istenecek.
+{
+printf("\tyeni Sifreniz");
+scanf("%d",&deneme_sifre1);
+printf("\n\tyeniden sifrenizi giriniz");
+scanf("%d",&deneme_sifre2); 
+while(deneme_sifre1!=deneme_sifre2) //İki kez girilmesi istenen şifrenin birbiriyle eşleşip eşleşmediği kontrol ediliyor.
+{
+printf("\n\tEslesme Yapilamadi\n");
+printf("\tyeniden sifrenizi giriniz:");
+scanf("%d",&deneme_sifre2); 
+}
+if(deneme_sifre1==deneme_sifre2) //Eğer şifreler eşleşiyorsa şifre değiştiriliyor.
+{
+sifre1=deneme_sifre1;
+printf("\tSifreniz Degistirilmistir\n");
+} 
+
+}
+if(secim==2) //Bakiye Görüntüleme işlemi seçilirse ekrana hesaptaki miktar yazılıyor.
+{
+	printf("\tBakiyeniz 280000TL");
+}
+if(secim==3) 
+{
+	printf("\tYatirilacak Miktar: ");
+	scanf("%d",&param); 
+	top_param+=param; //Para Yatırma işlemi seçilirse mevcut olan bakiyenin üzerine ekleme işlemi yapılıyor.
+	printf("\tParaniz Hesabiniza Yatirilmistir.\n"); 
+	printf("\tHesabinizdaki Para: %d\n",top_param); //Tekrardan bakiye sorgulamak zorunda kalmamak için işlem sonunda toplam miktar gösteriliyor.
+}
+if(secim==4)
+{
+
+printf("\tCekilecek para miktari: ");
+scanf("%d",&para_cek); 
+
+if(top_param>para_cek) //eğer çekilecek miktar hesaptaki paradan az ise işlem yapılıyor.
+{
+printf("\tcekilen para miktari: %d\n",para_cek);
+top_param=(top_param)-(para_cek);
+printf("\thesabinizda %d kalmistir.\n",top_param); //İşlem sonunda kalan bakiye ekrana yazılıyor.
+
+}
+
+if(top_param<para_cek) //Eğer bakiye çekilecek miktardan az ise gereken uyarı yapılıyor.
+{
+printf(">>Bakiyeniz Yeterli Degil Yine De Devam Etmek Istiyormusunuz(E(e)/H(h)): ");
+scanf("%2c",&harf2,&harf);
+
+switch(harf) //E veya H harflerine basılması durumunda şu işlemleri uygula.
+{
+case 'e':
+case 'E': top_param=(top_param)-(para_cek);
+printf("\tCekilen tutar %d Bankaya %d Borclandiniz.\n",para_cek,top_param);
+break;
+case 'h':
+case 'H': printf("\tIsleminiz Iptal Olmustur.\n");
+} 
+}
+} 
+if(secim==5)
+{
+printf("\tBanka Hesap Numaraniz: %d\n",hesap_no1);
+printf("\tBakiyeniz: %d",top_param); 
+} 
+if(secim==6)
+{
+	printf("\tGondermek Istediginiz Hesap Numarasini Giriniz: \n");
+	scanf("%d",&hesap_no2);
+
+	
+	if(hesap_no2==456)
+		
+	{
+		printf("\tGondermek Istediginiz Miktari Giriniz: \n");
+
+		scanf("%d",&gond_para);
+		top_param=(top_param)-(gond_para);
+
+		printf("\tBakiyeniz: %d",top_param);
+	}
+	
+
+
+}
+if(secim==7)
+{
+	printf("\t\tIslem Bitti, Lutfen Kartinizi Unutmayin\n");
+
+
+}
+}
+
+
+	printf("\n\tCikis\n\n");
+	system("PAUSE");
+	return 0; 
+
+}
