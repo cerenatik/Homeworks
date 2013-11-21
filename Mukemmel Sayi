@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	float top=0;
+	int i,a;
+	printf("Lutfen Bir Tamsayi Giriniz:");
+	scanf("%d", &a);
+	for(i=1; i<a; i++)
+		if(a%i==0)
+			top+=i;
+	if(a==top)
+		printf("%d Sayisi Mukemmel Sayidir.", a);
+	else
+		printf("%d Sayisi Mukemmel Sayi Degildir.", a);
+	getch();
+}
