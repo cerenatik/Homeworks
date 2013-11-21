@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+void main()
+{
+	int sayi,toplam, gecici;
+	printf("1.000.000dan Kucuk Bir Sayi Giriniz:");
+	scanf_s("%d", &sayi);
+	gecici=sayi;
+	int y1,y2,y3,y4,y5;
+	y1=gecici/100000;
+	gecici-=y1*100000;
+	y2=gecici/10000;
+	gecici-=y2*10000;
+	y3=gecici/1000;
+	gecici-=y3*1000;
+	y4=gecici/100;
+	gecici-=y4*100;
+	y5=gecici/10;
+	gecici-=y5*10;
+	toplam=pow((float)y1,3)+pow((float)y2,3)+pow((float)y3,3)+pow((float)y4,3)+pow((float)y5,3);
+	if(toplam==sayi)
+		printf("%d sayinin basamaklari toplami sayinin kendisine esit",);
+	else
+		printf("%d sayinin basamaklari toplami sayinin kendisine esit degil");
+	_getch();
+}
