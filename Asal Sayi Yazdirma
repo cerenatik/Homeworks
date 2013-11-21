@@ -1,0 +1,18 @@
+#include <stdio.h>
+void main ()
+{
+        int Sayi, x, y, kalan;
+        printf ("Lutfen Pozitif Bir Tam Sayi Giriniz: ");
+        scanf  ("%d",&Sayi);
+        for(x=2; x<=Sayi; x++)
+		{
+            kalan=1;
+            for(y=2; y<x; y++)
+			{
+                if(x%y==0) {
+                kalan=0;
+                break;
+            }}
+            if(kalan==1) printf("%d\n",x);
+       }
+}
